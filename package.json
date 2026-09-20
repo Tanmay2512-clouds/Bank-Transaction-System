@@ -4,7 +4,9 @@
   "description": "A Node.js backend foundation for managing bank transactions.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"npx nodemon server.js"
+
   },
   "keywords": ["banking", "transactions", "node.js", "express", "mongoose"],
   "author": "",
