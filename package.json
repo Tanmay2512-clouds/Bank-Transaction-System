@@ -5,14 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"npx nodemon server.js"
-
+    "dev": "npx nodemon server.js"
   },
-  "keywords": ["banking", "transactions", "node.js", "express", "mongoose"],
+  "keywords": [
+    "banking",
+    "transactions",
+    "node.js",
+    "express",
+    "mongoose"
+  ],
   "author": "",
   "license": "MIT",
   "type": "commonjs",
   "dependencies": {
+    "bcryptjs": "^3.0.3",
     "dotenv": "^18.0.1",
     "express": "^5.2.1",
     "mongoose": "^9.10.1"

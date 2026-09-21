@@ -18,7 +18,7 @@ const userSchema = mongoose.Schema({
         required:[true,"Password is required for creating the "],
         minlength:[6,"Password should constain atleast 6 character"],
         select:false
-
-    }
-    
+    },
+},{
+    timestamps:true
 })
