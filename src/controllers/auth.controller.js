@@ -19,7 +19,9 @@ async function userRegisterController(req,res){
         email , password , name 
     })
 
-    const token = jwt.sign(process.env.JWT_SECRET)
+    const token = jwt.sign({userId:user._id},process.env.JWT_SECRET,{expiresIn:"3d"})
+
+    
 }
 
 module.exports = {
