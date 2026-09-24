@@ -24,15 +24,15 @@ const userSchema = mongoose.Schema({
     timestamps:true
 })
 
-userSchema.pre("save",async function (next){
+userSchema.pre("save",async function (){
     if(!this.isModified("password")){ //if password is not modified
-        return next()
+        return 
     }
     //if password is modified then
 
     const hash = await bcrypt.hash(this.password,10) //Password converted to hash
     this.password = hash //password saved in hash
-    return next()
+    return 
 
 })
 
