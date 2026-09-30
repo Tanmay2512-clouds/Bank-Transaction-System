@@ -40,7 +40,9 @@ const sendEmail = async (to, subject, text, html) => {
 };
 
 async function sendRegistrationEmail(userEmail,name){
-  
+  const subject = "Welcome to Backend ledger";
+  const text = ""
+
 }
 
 module.exports = sendEmail;
