@@ -4,7 +4,8 @@ const acccountSchema = new mongoose.Schema({
     user:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"user",
-        required:[true,"Account must be associated with the user"]
+        required:[true,"Account must be associated with the user"],
+        index:true
     },
     status:{
         enum:["ACTIVE","FROZEN","CLOSED"],
@@ -15,7 +16,13 @@ const acccountSchema = new mongoose.Schema({
         required:[true,"Currency is required for creating an account"],
         default:"INR"
     },
-    balance:{
-        
-    }
+    
+},{
+    timestamps:true
 })
+
+acccountSchema.index({user:1,status:1}) //compound index
+
+const accountModel = mongoose.model("account",acccountSchema)
+
+module.exports = accountModel
