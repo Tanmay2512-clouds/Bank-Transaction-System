@@ -1,5 +1,5 @@
 const {Router} = require('express')
-const { authMiddleware } = require('../middleware/auth.middleware')
+const  authMiddleware  = require('../middleware/auth.middleware')
 const { authSystemUserMiddleware} = require('../middleware/auth.middleware')
 
 const transactionRoutes = Router()
@@ -8,7 +8,7 @@ const transactionRoutes = Router()
 
 transactionRoutes.post("/",authMiddleware.authMiddleware,transactionController.createTransaction)
 
-transactionRoutes.post("/system/initial-funds",authMiddleware.authSystemUserMiddleware,transactionController.createInitialTransaction)
+transactionRoutes.post("/system/initial-funds",authMiddleware.authSystemUserMiddleware,transactionController.createInitialfundsTransaction)
 
 
 module.exports = transactionRoutes

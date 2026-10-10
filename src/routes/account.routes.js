@@ -9,6 +9,10 @@ const router = express.Router()
 
 router.post("/",authMiddleware.authMiddleware,accountController.createAccountController)
 
+//get api
+
+router.get("/",authMiddleware.authMiddleware,accountController.getUserAccountController)
+
 
 
 module.exports = router
