@@ -9,10 +9,12 @@ app.use(cookieParser())
 
 const authRouter = require("./routes/auth.routes")
 const accountRouter = require("./routes/account.routes")
+const transactionRoutes = require("./routes/transaction.routes")
 
 //use-routes    
 
 app.use("/api/auth",authRouter)//middleware created
 app.use("api/accounts",accountRouter)
+app.use("api/transaction",transactionRoutes)
 
 module.exports = app;

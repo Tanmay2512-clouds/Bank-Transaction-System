@@ -30,3 +30,20 @@ const ledgerSchema = new mongoose.Schema({
         immutable:true
     }
 })
+
+function preventLedgerModification(){
+    throw new Error("Ledger enteries are immutable and cannot be modified or deleted")
+}
+
+ledgerSchema.pre('findOneAndUpdate',preventLedgerModification)
+ledgerSchema.pre('updateOne',preventLedgerModification)
+ledgerSchema.pre('deleteOne',preventLedgerModification)
+ledgerSchema.pre('remove',preventLedgerModification)
+ledgerSchema.pre('deleteMany',preventLedgerModification)
+ledgerSchema.pre('updateMany',preventLedgerModification)
+ledgerSchema.pre('findOneAndDelete',preventLedgerModification)
+ledgerSchema.pre('findOneAndReplace',preventLedgerModification)
+
+const ledgerModel = mongoose.model('ledger',ledgerSchema)
+
+module.exports = ledgerModel
